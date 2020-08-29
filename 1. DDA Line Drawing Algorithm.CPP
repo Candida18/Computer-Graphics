@@ -1,19 +1,21 @@
 
-#include<iostream.h>
+#include <stdio.h>
 #include<conio.h>
 #include<math.h>
 #include<graphics.h>
 #include<dos.h>
 
+
 int main(){
 float x,y,x1,y1,x2,y2,dx,dy,step;
 int i,gdriver=DETECT,gmode;
 
-initgraph(&gdriver,&gmode,"C:\\TURBOC3\\BGI");
-cout<<"Enter the value of x1,y1:"<<endl;
-cin>>x1>>y1;
-cout<<"Enter the value of x2,y2:"<<endl;
-cin>>x2>>y2;
+initgraph(&gdriver,&gmode,"");
+
+printf("Enter the value of x1,y1:\n");
+scanf("%f %f",&x1,&y1);
+printf("Enter the value of x2,y2:\n");
+scanf("%f %f",&x2,&y2);
 
 
 dx=x2-x1;
@@ -41,4 +43,5 @@ i=i+1;
 
 getch();
 closegraph();
+return 0;
 }
