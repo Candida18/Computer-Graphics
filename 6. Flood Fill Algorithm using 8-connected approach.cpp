@@ -26,4 +26,5 @@ int main()
 		delay(10000);
                 getch();
                 closegraph();
+		return 0;
 }
