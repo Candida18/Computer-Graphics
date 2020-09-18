@@ -6,7 +6,8 @@
 #include<dos.h>
 
 
-int main(){
+int main()
+{
 float x,y,x1,y1,x2,y2,dx,dy,step;
 int i,gdriver=DETECT,gmode;
 
