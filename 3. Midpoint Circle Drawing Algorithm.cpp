@@ -1,7 +1,8 @@
 #include<graphics.h>
 #include<stdio.h>
 void pixel(int xc,int yc,int x,int y);
-int main() {
+int main() 
+{
 int gdriver=DETECT, gmode,xc,yc,r,x,y,p;
 initgraph(& gdriver, & gmode,"C:\\TURBOC3\\BGI");
 printf("Enter the co-ordinates of the centre of the circle:\n");
