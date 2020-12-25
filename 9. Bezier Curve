@@ -1,0 +1,45 @@
+/********************************************************************************
+TITLE : PROGRAM TO IMPLEMENT THE BEZIER CURVE.
+********************************************************************************/
+
+#include <stdio.h>
+#include <graphics.h>
+#include <math.h>
+#include <conio.h>
+
+int main()
+{
+    int gd = DETECT, gm; //Detects the graphics drivers automatically
+    initgraph (&gd, &gm, " "); //Initialize to graphics mode
+
+    int x[4],y[4],i;
+    double put_x,put_y,t;
+
+    //To plot the quadrants
+    line(0,240,639,240);
+    line(320,0,320,479);
+    outtextxy(295,243,"0,0");
+    setcolor(WHITE);
+
+    printf("\n ===========================BEZIER CURVE============================\n");
+    printf("\n Enter the x and y coordinates of the four control points : \n ");
+
+    for (i=0; i<4; i++)
+    {
+        scanf("%d%d", &x[i],&y[i]);
+        putpixel (320+x[i],240-y[i],14);  // Plots the control points
+    }
+
+    //To plot the BEZIER CURVE
+    for (t = 0.0; t < 1.0; t += 0.001)  // t always lies between 0 and 1
+    {
+        put_x = pow(1-t,3)*x[0] + 3*t*pow(1-t,2)*x[1] + 3*pow(t,2)*(1-t)*x[2] + pow(t,3)*x[3];
+        put_y = pow(1-t,3)*y[0] + 3*t*pow(1-t,2)*y[1] + 3*pow(t,2)*(1-t)*y[2] + pow(t,3)*y[3];
+        putpixel(320+put_x,240-put_y,1); //Plots the BEZIER CURVE
+		
+    }
+
+    getch(); //Pauses the Output Console until a key is pressed
+    closegraph(); //Closes the graphics mode
+    return 0;
+}
